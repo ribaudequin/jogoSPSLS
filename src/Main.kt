@@ -49,9 +49,33 @@ fun regras() {
 }
 
 fun iniciarJogo() {
-    // TODO:
+    println("Escolha Papel, Pedra, Tesoura, Lagarto ou Spock")
+    val escolhaJogador = readlnOrNull()   // lembrar para por em lowercase  <---------- IMPORTANTE
+
+    if (escolhaJogador == null) {
+        println("Opcão inválida. Pressione ENTER para tentar novamente.")
+        readln()
+        iniciarJogo()
+    }
+
+    val escolhaComputador = gerarComputador()
+
+    quemGanhou(escolhaJogador!!, escolhaComputador)
+
 }
 
 fun sair() {
     return
+}
+
+
+//logica
+fun gerarComputador(): String {
+    val opcoes = listOf("papel", "pedra", "tesoura", "lagarto", "spock")
+    val indice = (0..4).random()
+    return opcoes[indice]
+}
+
+fun quemGanhou(jogador: String, computador: String) {
+
 }
