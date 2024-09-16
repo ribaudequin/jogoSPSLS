@@ -13,6 +13,7 @@ fun menu() {
     println("# 2 - Iniciar o jogo                                     #")
     println("# 3 - Sair                                               #")
     println("##########################################################")
+    println("#                    ${simbolos.Papel.code} ${simbolos.Pedra.code} ${simbolos.Tesoura.code} ${simbolos.Lagarto.code} ${simbolos.Spock.code}                      #")
 
     val opcao = readlnOrNull()
 
@@ -43,9 +44,7 @@ fun regras() {
     println(" Pedra \uD83E\uDEA8 parte tesoura ✂\uFE0F                 ")
     println("##########################################################")
 
-    println("Pressione ENTER para voltar ao menu.")
-    readln()
-    menu()
+    voltaOuMenu()
 }
 
 fun iniciarJogo() {
@@ -68,6 +67,12 @@ fun sair() {
     return
 }
 
+fun voltaOuMenu() {
+    println("Pressione ENTER para voltar ao menu.")
+    readln()
+    menu()
+}
+
 
 //logica
 fun gerarComputador(): String {
@@ -77,5 +82,19 @@ fun gerarComputador(): String {
 }
 
 fun quemGanhou(jogador: String, computador: String) {
+        // TODO: adicionar o resto da logica
+    voltaOuMenu()
+    }
 
+enum class simbolos(val code : String) {
+    Papel("\uD83D\uDCF0"),
+    Pedra("\uD83E\uDEA8"),
+    Tesoura("✂\uFE0F"),
+    Lagarto("\uD83E\uDD8E"),
+    Spock("\uD83D\uDD96");
 }
+
+
+
+
+
