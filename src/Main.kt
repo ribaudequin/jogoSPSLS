@@ -75,18 +75,18 @@ fun voltaOuMenu() {
 
 fun mensagem(opcao1: String, opcao2: String): String {
     when {
-        opcao1 == "Tesoura" && opcao2 == "Papel" || opcao1 == "Papel" && opcao2 == "Tesoura" ->
+        opcao1 == "tesoura" && opcao2 == "papel" || opcao1 == "papel" && opcao2 == "tesoura" ->
             return "Tesoura ${simbolos.Tesoura.code} corta papel ${simbolos.Papel.code}"
-        opcao1 == "Papel" && opcao2 == "Pedra" || opcao1 == "Pedra" && opcao2 == "Papel" ->
+        opcao1 == "papel" && opcao2 == "pedra" || opcao1 == "pedra" && opcao2 == "papel" ->
             return "Papel ${simbolos.Papel.code} cobre pedra ${simbolos.Pedra.code}"
-        opcao1 == "Pedra" && opcao2 == "Lagarto" || opcao1 == "Lagarto" && opcao2 == "Pedra" -> return "Pedra esmaga lagarto"
-        opcao1 == "Lagarto" && opcao2 == "Spock" || opcao1 == "Spock" && opcao2 == "Lagarto" -> return "Lagarto envenena Spock"
-        opcao1 == "Spock" && opcao2 == "Tesoura" || opcao1 == "Tesoura" && opcao2 == "Spock" -> return "Spock Vaporiza tesoura"
-        opcao1 == "Tesoura" && opcao2 == "Lagarto" || opcao1 == "Lagarto" && opcao2 == "Tesoura" -> return "Tesoura decapita lagarto"
-        opcao1 == "Lagarto" && opcao2 == "Papel" || opcao1 == "Papel" && opcao2 == "Lagarto" -> return "Lagarto come papel"
-        opcao1 == "Papel" && opcao2 == "Spock" || opcao1 == "Spock" && opcao2 == "Papel" -> return "Papel desmente Spock"
-        opcao1 == "Spock" && opcao2 == "Pedra" || opcao1 == "Pedra" && opcao2 == "Spock" -> return "Spock destrói pedra"
-        opcao1 == "Pedra" && opcao2 == "Tesoura" || opcao1 == "Tesoura" && opcao2 == "Pedra" -> return "Pedra parte tesoura"
+        opcao1 == "pedra" && opcao2 == "lagarto" || opcao1 == "lagarto" && opcao2 == "pedra" -> return "Pedra esmaga lagarto"
+        opcao1 == "lagarto" && opcao2 == "spock" || opcao1 == "spock" && opcao2 == "lagarto" -> return "Lagarto envenena Spock"
+        opcao1 == "spock" && opcao2 == "tesoura" || opcao1 == "tesoura" && opcao2 == "spock" -> return "Spock Vaporiza tesoura"
+        opcao1 == "tesoura" && opcao2 == "lagarto" || opcao1 == "lagarto" && opcao2 == "tesoura" -> return "Tesoura decapita lagarto"
+        opcao1 == "lagarto" && opcao2 == "papel" || opcao1 == "papel" && opcao2 == "lagarto" -> return "Lagarto come papel"
+        opcao1 == "papel" && opcao2 == "spock" || opcao1 == "spock" && opcao2 == "papel" -> return "Papel desmente Spock"
+        opcao1 == "spock" && opcao2 == "pedra" || opcao1 == "pedra" && opcao2 == "spock" -> return "Spock destrói pedra"
+        opcao1 == "pedra" && opcao2 == "tesoura" || opcao1 == "tesoura" && opcao2 == "pedra" -> return "Pedra parte tesoura"
         else -> return "Empate"
     }
 }
