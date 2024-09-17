@@ -73,26 +73,34 @@ fun voltaOuMenu() {
     menu()
 }
 
-
-//logica
-fun gerarComputador(): String {
-    val opcoes = listOf("papel", "pedra", "tesoura", "lagarto", "spock")
-    val indice = (0..4).random()
-    return opcoes[indice]
+fun mensagem(opcao1: String, opcao2: String): String {
+    when {
+        opcao1 == "Tesoura" && opcao2 == "Papel" || opcao1 == "Papel" && opcao2 == "Tesoura" ->
+            return "Tesoura ${simbolos.Tesoura.code} corta papel ${simbolos.Papel.code}"
+        opcao1 == "Papel" && opcao2 == "Pedra" || opcao1 == "Pedra" && opcao2 == "Papel" ->
+            return "Papel ${simbolos.Papel.code} cobre pedra ${simbolos.Pedra.code}"
+        opcao1 == "Pedra" && opcao2 == "Lagarto" || opcao1 == "Lagarto" && opcao2 == "Pedra" -> return "Pedra esmaga lagarto"
+        opcao1 == "Lagarto" && opcao2 == "Spock" || opcao1 == "Spock" && opcao2 == "Lagarto" -> return "Lagarto envenena Spock"
+        opcao1 == "Spock" && opcao2 == "Tesoura" || opcao1 == "Tesoura" && opcao2 == "Spock" -> return "Spock Vaporiza tesoura"
+        opcao1 == "Tesoura" && opcao2 == "Lagarto" || opcao1 == "Lagarto" && opcao2 == "Tesoura" -> return "Tesoura decapita lagarto"
+        opcao1 == "Lagarto" && opcao2 == "Papel" || opcao1 == "Papel" && opcao2 == "Lagarto" -> return "Lagarto come papel"
+        opcao1 == "Papel" && opcao2 == "Spock" || opcao1 == "Spock" && opcao2 == "Papel" -> return "Papel desmente Spock"
+        opcao1 == "Spock" && opcao2 == "Pedra" || opcao1 == "Pedra" && opcao2 == "Spock" -> return "Spock destrói pedra"
+        opcao1 == "Pedra" && opcao2 == "Tesoura" || opcao1 == "Tesoura" && opcao2 == "Pedra" -> return "Pedra parte tesoura"
+        else -> return "Empate"
+    }
 }
 
-fun quemGanhou(jogador: String, computador: String) {
-        // TODO: adicionar o resto da logica
-    voltaOuMenu()
-    }
 
-enum class simbolos(val code : String) {
+
+enum class simbolos(val code: String) {
     Papel("\uD83D\uDCF0"),
     Pedra("\uD83E\uDEA8"),
     Tesoura("✂\uFE0F"),
     Lagarto("\uD83E\uDD8E"),
     Spock("\uD83D\uDD96");
 }
+
 
 
 
