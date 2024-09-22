@@ -9,6 +9,5 @@ fun gerarComputador(): String {
 fun quemGanhou(jogador: String, computador: String) {
     // TODO: adicionar o resto da logica
     println(mensagem(jogador, computador))
-    readln()
     voltaOuMenu()
 }

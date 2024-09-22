@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05d7b2ab-9ccb-4b3a-a522-de87740e8107" name="Changes" comment="17/09/2024">
+      <change afterPath="$PROJECT_DIR$/src/recursos.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/logica.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/logica.kt" afterDir="false" />
