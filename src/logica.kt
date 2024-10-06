@@ -11,22 +11,33 @@ fun quemGanhou(jogador: String, computador: String) {
 
 
     if (jogador == computador) {
-        println("O jogador empata ${simbolos.empate.code} com o computador")
+        println("O ${Globalvariables.nome} empatou ${simbolos.empate.code} com o computador ${simbolos.computador.code}")
     } else if (jogador == "pedra" && (computador == "tesoura" || computador == "lagarto")) {
-        println("O jogador ganhou ${simbolos.pedra.code} ao computador")
+        println("O ${Globalvariables.nome} ganhou ${simbolos.pedra.code} ao computador ${simbolos.computador.code}")
     } else if (jogador == "papel" && (computador == "pedra" || computador == "spock")) {
-        println("O jogador ganhou ${simbolos.papel.code} ao computador")
+        println("O ${Globalvariables.nome} ganhou ${simbolos.papel.code} ao computador ${simbolos.computador.code}")
     } else if (jogador == "tesoura" && (computador == "papel" || computador == "lagarto")) {
-        println("O jogador ganhou ${simbolos.tesoura.code} ao computador")
+        println("O ${Globalvariables.nome} ganhou ${simbolos.tesoura.code} ao computador ${simbolos.computador.code}")
     } else if (jogador == "lagarto" && (computador == "spock" || computador == "papel")) {
-        println("O jogador ganhou ${simbolos.lagarto.code} ao computador")
+        println("O ${Globalvariables.nome} ganhou ${simbolos.lagarto.code} ao computador ${simbolos.computador.code}")
     } else if (jogador == "spock" && (computador == "tesoura" || computador == "pedra")) {
-        println("O jogador ganhou ${simbolos.spock.code} ao computador")
+        println("O ${Globalvariables.nome} ganhou ${simbolos.spock.code} ao computador ${simbolos.computador.code}")
     } else {
-        println("O computador ganhou ${simbolos.valueOf(computador).code} ao Jogador")
+        println("O computador ${simbolos.computador.code} ganhou ${simbolos.valueOf(computador).code} ao ${Globalvariables.nome}")
     }
 
     voltaOuMenu()
 }
 
+
+
+fun jogador() {
+    println("Qual seu nome?")
+    Globalvariables.nome = readlnOrNull()
+}
+
+
+object  Globalvariables {
+    var nome: String? = null
+}
 

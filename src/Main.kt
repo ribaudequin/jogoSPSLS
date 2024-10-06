@@ -1,20 +1,23 @@
 fun main() {
+    jogador()
     menu()
 }
 
 
 fun menu() {
-    println("##########################################################")
-    println("# Bem vindo ao jogo Papel, Pedra, Tesoura Lagarto, Spock #")
-    println("##########################################################")
-    println("#         Escolha uma das opções abaixo:                 #")
-    println("##########################################################")
-    println("# 1 - Regras do jogo                                     #")
-    println("# 2 - Iniciar o jogo                                     #")
-    println("# 3 - Sair                                               #")
-    println("##########################################################")
-    println("#                    ${simbolos.papel.code} ${simbolos.pedra.code} " +
-            "${simbolos.tesoura.code} ${simbolos.lagarto.code} ${simbolos.spock.code}                      #")
+    println("###################################################################")
+    println(" Bem vindo ${Globalvariables.nome} ao jogo Papel, Pedra, Tesoura Lagarto, Spock      ")
+    println("###################################################################")
+    println("         Escolha uma das opções abaixo:                            ")
+    println("###################################################################")
+    println(" 1 - Regras do jogo                                                ")
+    println(" 2 - Iniciar o jogo                                                ")
+    println(" 3 - Sair                                                          ")
+    println("###################################################################")
+    println(
+        "#                    ${simbolos.papel.code} ${simbolos.pedra.code} " +
+                "${simbolos.tesoura.code} ${simbolos.lagarto.code} ${simbolos.spock.code}                      #"
+    )
 
     val opcao = readlnOrNull()
 
@@ -52,7 +55,9 @@ fun iniciarJogo() {
     println("Escolha Papel, Pedra, Tesoura, Lagarto ou Spock")
     val escolhaJogador = readlnOrNull()?.lowercase()   // lembrar para por em lowercase  <---------- IMPORTANTE
 
-    if (escolhaJogador == null) {
+    if (escolhaJogador == null || escolhaJogador !in
+        listOf("papel", "pedra", "tesoura", "lagarto", "spock")
+    ) {
         println("Opcão inválida. Pressione ENTER para tentar novamente.")
         readln()
         iniciarJogo()
@@ -78,28 +83,37 @@ fun mensagem(opcao1: String, opcao2: String): String {
     when {
         opcao1 == "tesoura" && opcao2 == "papel" || opcao1 == "papel" && opcao2 == "tesoura" ->
             return "Tesoura ${simbolos.tesoura.code} corta papel ${simbolos.papel.code}"
+
         opcao1 == "papel" && opcao2 == "pedra" || opcao1 == "pedra" && opcao2 == "papel" ->
             return "Papel ${simbolos.papel.code} cobre pedra ${simbolos.pedra.code}"
+
         opcao1 == "pedra" && opcao2 == "lagarto" || opcao1 == "lagarto" && opcao2 == "pedra" ->
             return "Pedra ${simbolos.pedra.code} esmaga lagarto ${simbolos.lagarto.code}"
+
         opcao1 == "lagarto" && opcao2 == "spock" || opcao1 == "spock" && opcao2 == "lagarto" ->
             return "Lagarto ${simbolos.lagarto.code} envenena Spock ${simbolos.spock.code}"
+
         opcao1 == "spock" && opcao2 == "tesoura" || opcao1 == "tesoura" && opcao2 == "spock" ->
             return "Spock  ${simbolos.spock.code} Vaporiza tesoura ${simbolos.tesoura.code}"
+
         opcao1 == "tesoura" && opcao2 == "lagarto" || opcao1 == "lagarto" && opcao2 == "tesoura" ->
             return "Tesoura ${simbolos.tesoura.code} decapita lagarto ${simbolos.lagarto.code}"
+
         opcao1 == "lagarto" && opcao2 == "papel" || opcao1 == "papel" && opcao2 == "lagarto" ->
             return "Lagarto ${simbolos.lagarto.code} come papel ${simbolos.papel.code}"
+
         opcao1 == "papel" && opcao2 == "spock" || opcao1 == "spock" && opcao2 == "papel" ->
             return "Papel ${simbolos.papel.code} desmente Spock ${simbolos.spock.code}"
+
         opcao1 == "spock" && opcao2 == "pedra" || opcao1 == "pedra" && opcao2 == "spock" ->
             return "Spock ${simbolos.spock.code} destrói pedra ${simbolos.pedra.code}"
+
         opcao1 == "pedra" && opcao2 == "tesoura" || opcao1 == "tesoura" && opcao2 == "pedra" ->
             return "Pedra ${simbolos.pedra.code} parte tesoura ${simbolos.tesoura.code}"
+
         else -> return "Empate ${simbolos.empate.code}"
     }
 }
-
 
 
 enum class simbolos(val code: String) {
@@ -108,6 +122,7 @@ enum class simbolos(val code: String) {
     tesoura("✂\uFE0F"),
     lagarto("\uD83E\uDD8E"),
     spock("\uD83D\uDD96"),
+    computador("\uD83D\uDCBB"),
     empate("\uD83D\uDFF0");
 }
 
